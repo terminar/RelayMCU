@@ -21,6 +21,8 @@ By the way this MCU has very similar architecture to 8051 MCU so some code which
 
 # To upload code into MCU connect module to USB UART as shown on picture run this
  
+WARNING! The picture is NOT correct! Put VCC => VCC, GND => GND and TX <=> RX!
+ 
   stcgal -p /dev/ttyUSB1 -b 1200 -D -t 11059 relay.ihx
   
   disconnect +5V (red wire on image) and connect it again for start flashing. 
