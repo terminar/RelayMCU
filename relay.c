@@ -55,7 +55,7 @@ void main()
 {
 	char a[] = { 'U','P' };
 
-// set push-pull mode to P3.2 
+/* set push-pull mode to P3.2 */
 
     P3M1=0;
     P3M0=4;
@@ -170,20 +170,19 @@ void uart_send(char chr)
 
 void uart_init()
 {
-	SCON = 0x50; // Asynchronous mode, 8-bit data and 1-stop bit
+	SCON = 0x50; 		/* Asynchronous mode, 8-bit data and 1-stop bit */
 	EA = 0;
 	PT0 = 0;
-	ET0 = 0;                //enable timer0 interrupt
-	TR0 = 0;                //tiemr0 start running
-	TMOD = 0x00;            //timer0 in 16-bit auto reload mode
-	AUXR = 0x80;            //timer0 working at 1T mode
+	ET0 = 0;                /* enable timer0 interrupt */
+	TR0 = 0;                /* tiemr0 start running */
+	TMOD = 0x00;            /* timer0 in 16-bit auto reload mode */
+	AUXR = 0x80;            /* timer0 working at 1T mode */
 	TL0 = BAUD;
-	TH0 = BAUD >> 8;        //initial timer0 and set reload value
-	TR0 = 1;                //tiemr0 start running
-	ET0 = 1;                //enable timer0 interrupt
-	PT0 = 1;                //improve timer0 interrupt priority
-	EA = 1;                 //open global interrupt switch
-
+	TH0 = BAUD >> 8;        /* initial timer0 and set reload value */
+	TR0 = 1;                /* tiemr0 start running */
+	ET0 = 1;                /* enable timer0 interrupt */
+	PT0 = 1;                /* improve timer0 interrupt priority */
+	EA = 1;                 /* open global interrupt switch */
 
 	TING = 0;
 	RING = 0;
